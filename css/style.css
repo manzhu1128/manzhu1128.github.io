@@ -376,7 +376,7 @@ hr{
 }
 
 .font-padding{
-    padding-left: 112px;
+    padding-left: 134px;
 }
 
 .buy-title span{
@@ -445,6 +445,10 @@ hr{
     .MultiCarousel .item img{
         width: 130px;
         height: 100px;
+    }
+
+    .card-content .card-img img{
+        height: 19rem;
     }
 
   }

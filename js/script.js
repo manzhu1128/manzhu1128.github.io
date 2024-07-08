@@ -6,14 +6,22 @@ $(document).ready(function() {
   updateActiveThumbnail(currentIndex);
 
   // 點擊右側按鈕
-  $('.rightLst').click(function() {
-      if (currentIndex < totalItems - 1) {
-          currentIndex++;
-      } else {
-          currentIndex = 0; // 循環到第一張圖片
-      }
-      updateActiveThumbnail(currentIndex);
-  });
+    $('.rightLst').click(function() {
+        if (currentIndex < totalItems - 1) {
+            currentIndex++;
+            updateRightButtonState(); // 更新右按鈕狀態
+        }
+        updateActiveThumbnail(currentIndex);
+    });
+
+    // 更新右按鈕狀態
+    function updateRightButtonState() {
+        if (currentIndex === totalItems - 1) {
+            $('.rightLst').addClass('over'); // 禁用右按鈕的樣式
+        } else {
+            $('.rightLst').removeClass('over'); // 啟用右按鈕的樣式
+        }
+    }
 
   // 點擊左側按鈕
   $('.leftLst').click(function() {
@@ -90,8 +98,8 @@ $(document).ready(function() {
                   $(this).outerWidth(itemWidth);
               });
 
-          $(".leftLst").addClass("over");
-          $(".rightLst").removeClass("over");
+        //   $(".leftLst").addClass("over");
+        //   $(".rightLst").removeClass("over");
       });
   }
 
@@ -118,7 +126,6 @@ $(document).ready(function() {
 
           if (translateXval >= itemsCondition - itemWidth / 2) {
               translateXval = itemsCondition;
-              $(el + ' ' + rightBtn).addClass("over");
           }
       }
       $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
