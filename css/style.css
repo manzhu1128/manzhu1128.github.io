@@ -12,8 +12,9 @@ body{
 .banner-image{
    position: relative;
 }
-.banner-image img{
-    width: 1920px;
+.banner-image img {
+    max-width: 100%;
+    height: auto; 
 }
 
 .icon-overlay {
