@@ -3,6 +3,10 @@ body{
     color: #404040;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* banner */
 .header-row {
     display: flex;
